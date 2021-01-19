@@ -30,5 +30,14 @@ var questionFive = {
 };
 
  
+// When "start" button is clicked start 60 second countdown timer and go through questionsArray starting at 0 ending at 4 (then bring up final "Congrats" screen with finishing time and push to High Scores) UNLESS timer runs out 0 then cut to "Lost" screen/try again
 
+// Timer function
+
+
+//Questions function accessing questionsArray index
+
+// Wrong answer -10 sec, if time = 0 go to "Lost"
+
+// List function for high scores (localstorage)
 
