@@ -45,17 +45,23 @@
     </nav>
 
     <div class="container">
-      <header class="d-flex justify-content-center">Welcome!</header>
-      <p>
-        This is a multi-choice quiz to test basic JavaScript knowledge, a timer
-        begins once the quiz is started but if a question is answered
-        incorrectly time is reduced. Should the time reach zero the game is over
-        and is considered a fail, however if all questions are answered with
-        time to spare that can be logged as the final score.
-      </p>
-       <div class="text-center">
-        <button type="button" class="btn btn-primary btn-lg" id="start">Start Quiz</button>
-       </div>
+      <div id="first">
+        <header class="d-flex justify-content-center">Welcome!</header>
+        <p>
+          This is a multi-choice quiz to test basic JavaScript knowledge, a timer
+          begins once the quiz is started but if a question is answered
+          incorrectly time is reduced. Should the time reach zero the game is over
+          and is considered a fail, however if all questions are answered with
+          time to spare that can be logged as the final score.
+        </p>
+        <div class="text-center">
+          <button type="button" class="btn btn-primary btn-lg" id="start">Start Quiz</button>
+        </div>
+      </div>
+      <div class="hide" id="quiz-q">
+       <h1> Questions</h1>
+       <div id="question-space"></div>
+      </div>
     </div>
 
     <script
@@ -63,5 +69,6 @@
       integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
       crossorigin="anonymous"
     ></script>
+    <script type="text/javascript" src="assets/script.js"></script>
   </body>
 </html>

@@ -26,10 +26,23 @@ var questionFour = {
 
 var questionFive = {
     question: "Which one is a property?",
-    options: "var chocolate, candy: caramel, console.log(Yum), (vanilla || chocolate)"
+    options: "var chocolate, candy: caramel, console.log(Yum), (vanilla || chocolate)",
+    correct: "candy: caramel"
 };
 
  
+document.getElementById("start").addEventListener("click", function(event) {
+    event.preventDefault
+    var opening = document.getElementById("first");
+    opening.classList.add("hide");
+    var scroll = document.querySelector("#quiz-q");
+    if (scroll.classList.contains("hide")) {
+    scroll.classList.remove("hide");
+    }
+
+    console.log("Hello")
+  });
+
 // When "start" button is clicked start 60 second countdown timer and go through questionsArray starting at 0 ending at 4 (then bring up final "Congrats" screen with finishing time and push to High Scores) UNLESS timer runs out 0 then cut to "Lost" screen/try again
 
 // Timer function

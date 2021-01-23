@@ -3,6 +3,6 @@
     color: black;
 }
 
-#start {
-    
+.hide {
+    display: none;
 }
