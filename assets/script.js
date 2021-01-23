@@ -38,10 +38,18 @@ document.getElementById("start").addEventListener("click", function(event) {
     var scroll = document.querySelector("#quiz-q");
     if (scroll.classList.contains("hide")) {
     scroll.classList.remove("hide");
-    }
+    } 
+    var questionSheet = document.querySelector("#question-space");
 
-    console.log("Hello")
+    
+    // If scroll does NOT equal "hide" { display array[i]} in the questionSheet space AND a next button. DO Not scroll through index until "Next" is pushed.
+
+    // Event listener on "next" move to next object in index
+    
+
   });
+
+ 
 
 // When "start" button is clicked start 60 second countdown timer and go through questionsArray starting at 0 ending at 4 (then bring up final "Congrats" screen with finishing time and push to High Scores) UNLESS timer runs out 0 then cut to "Lost" screen/try again
 
