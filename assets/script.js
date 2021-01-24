@@ -36,6 +36,7 @@ document.getElementById("start").addEventListener("click", function(event) {
     if (scroll.classList.contains("hide")) {
     scroll.classList.remove("hide");
     } 
+    countDown();
 });
 
 document.getElementById("next").addEventListener("click", function(event) {
@@ -47,9 +48,7 @@ document.getElementById("next").addEventListener("click", function(event) {
 
 
 function showQuestion() {
-
-    currentQuestion++;
-    
+    currentQuestion++; 
     if (currentQuestion > questionsArray.length - 1) {
         endGame();
         return;
@@ -61,10 +60,10 @@ function showQuestion() {
         let buttonCode = "<button onclick=\"[ANS]\">[CHOICE]</button>"; 
         buttonCode = buttonCode.replace("[CHOICE]", questionsArray[currentQuestion].options[buttonLoop]);
         if (questionsArray[currentQuestion].options[buttonLoop] == questionsArray[currentQuestion].correct) {
-            buttonCode = buttonCode.replace("[ANS]", "correct()");
+            buttonCode = buttonCode.replace("[ANS]", "correctAnswer()");
         } 
         else {
-            buttonCode = buttonCode.replace("[ANS]", "incorrect()");
+            buttonCode = buttonCode.replace("[ANS]", "wrongAnswer()");
         }
         quizContent += buttonCode
     }
@@ -88,11 +87,13 @@ function countDown() {
 }
 
 function wrongAnswer(){
-
+remainingTime -= 10;
+return showQuestion();
 }
 
 function correctAnswer(){
-
+score = remainingTime;
+return showQuestion();
 }
 
 function gameOver() {
