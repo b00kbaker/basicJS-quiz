@@ -1,4 +1,4 @@
-var questionsArray= [questionOne, questionTwo, questionThree, questionFour, questionFive]
+var questionsArray= ['questionOne', 'questionTwo', 'questionThree', 'questionFour', 'questionFive'];
 
 var questionOne = {
     question: "Which primitive data type is only defined as either true or false?",
@@ -30,6 +30,7 @@ var questionFive = {
     correct: "candy: caramel"
 };
 
+var quizOutput= [];
  
 document.getElementById("start").addEventListener("click", function(event) {
     event.preventDefault
@@ -39,15 +40,28 @@ document.getElementById("start").addEventListener("click", function(event) {
     if (scroll.classList.contains("hide")) {
     scroll.classList.remove("hide");
     } 
-    var questionSheet = document.querySelector("#question-space");
+});
 
-    
+document.getElementById("next").addEventListener("click", function(event) {
+    event.preventDefault
+    var chances=[];
+    questionsArray.forEach(element => console.log(element));
+
+});
+
+
+
+
+ 
+        
+    // questionSheet.textContent.questionsArray[questionThree];
+    // console.log(questionSheet)
+
     // If scroll does NOT equal "hide" { display array[i]} in the questionSheet space AND a next button. DO Not scroll through index until "Next" is pushed.
 
     // Event listener on "next" move to next object in index
     
 
-  });
 
  
 
@@ -61,4 +75,3 @@ document.getElementById("start").addEventListener("click", function(event) {
 // Wrong answer -10 sec, if time = 0 go to "Lost"
 
 // List function for high scores (localstorage)
-
