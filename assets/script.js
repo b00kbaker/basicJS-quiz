@@ -1,37 +1,28 @@
-var questionsArray= [questionOne, questionTwo, questionThree, questionFour, questionFive];
-
-var questionOne = {
-    question: "Which primitive data type is only defined as either true or false?",
+var questionsArray= [
+ {question: "Which primitive data type is only defined as either true or false?",
     options: "Boolean, String, Number",
-    correct: "Boolean"
-};
+    correct: "Boolean"},
 
-var questionTwo = {
-    question: "Groups of data displayed within [] are called?",
+ {question: "Groups of data displayed within [] are called?",
     options: "Strings, Arrays, Objects",
-    correct: "Arrays"
-};
+    correct: "Arrays"},
 
-var questionThree = {
-    question: "Array indexes begin at '1'.",
+ {question: "Array indexes begin at '1'.",
     options: "True, False, Either",
-    correct: "False"
-};
+    correct: "False"},
 
-var questionFour = {
-    question: "A global variable is declared within---.",
+ {question: "A global variable is declared within---.",
     options: "A method, the Javascript file before functions, an array",
-    correct: "the Javascript file before functions"
-};
+    correct: "the Javascript file before functions"},
 
-var questionFive = {
-    question: "Which one is a property?",
+ {question: "Which one is a property?",
     options: "candy: caramel, console.log(Yum), (vanilla || chocolate)",
-    correct: "candy: caramel"
-};
+    correct: "candy: caramel"},
+];
 
 var quizOutput= [];
 var currentIndex= 0;
+var answersEl= document.getElementById("answers");
 
  
 document.getElementById("start").addEventListener("click", function(event) {
@@ -52,24 +43,24 @@ document.getElementById("next").addEventListener("click", function(event) {
 
 
 function showQuestion(){
-    var currentQuestion=questionsArray[currentIndex];
+    var currentQ= questionsArray[currentIndex];
     var questionEl= document.getElementById("question-space");
-    questionEl.textContent= questionsArray.question;
-    var answers = document.getElementById("potenial-answers");
-    // answers.innerHTML="";
+    // questionEl.textContent= currentQ.question;
+    var potential = document.getElementById("potenial-answers");
+    // potential.innerHTML="";
 
-    questionsArray.options.forEach(function(option, i){
+    currentQ.options.forEach(function(option, i){
     var optionEL= document.createElement("button");
-    optionEl.setAttribute("class", "answers");
-    optionEl.setAttribute("value", answers);
+    optionEl.setAttribute("class", "choice");
+    optionEl.setAttribute("value", choice);
 
     optionEl.textContent= i + 1 + "." + choice;
 
     optionEL.onclick = optionClick;
 
-    answers.appendChild(optionEL);
+    potential.appendChild(optionEL);
     })
-
+ console.log(currentQ.question);
 };
 
 
