@@ -45,7 +45,7 @@ document.getElementById("next").addEventListener("click", function(event) {
 function showQuestion(){
     var currentQ= questionsArray[currentIndex];
     var questionEl= document.getElementById("question-space");
-    // questionEl.textContent= currentQ.question;
+    questionEl.textContent= currentQ.question;
     var potential = document.getElementById("potenial-answers");
     // potential.innerHTML="";
 
