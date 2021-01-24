@@ -1,22 +1,22 @@
 var questionsArray= [
  {question: "Which primitive data type is only defined as either true or false?",
-    options: ["Boolean, String, Number"],
+    options: ["Boolean", "String", "Number"],
     correct: "Boolean"},
 
  {question: "Groups of data displayed within [] are called?",
-    options: ["Strings, Arrays, Objects"],
+    options: ["Strings", "Arrays", "Objects"],
     correct: "Arrays"},
 
  {question: "Array indexes begin at '1'.",
-    options: ["True, False, Either"],
+    options: ["True", "False", "Either"],
     correct: "False"},
 
  {question: "A global variable is declared within---.",
-    options: ["A method, the Javascript file before functions, an array"],
+    options: ["A method", "the Javascript file before functions", "an array"],
     correct: "the Javascript file before functions"},
 
  {question: "Which one is a property?",
-    options:["candy: caramel, console.log(Yum), (vanilla || chocolate)"],
+    options:["candy: caramel", "console.log(Yum)", "(vanilla || chocolate)"],
     correct: "candy: caramel"},
 ];
 
@@ -41,27 +41,6 @@ document.getElementById("next").addEventListener("click", function(event) {
 
 });
 
-
-// function showQuestion(){
-//     var currentQ= (questionsArray[0].question);
-    // var questionEl= document.getElementById("question-space");
-//     questionEl.textContent= currentQ.question;
-//     var potential = document.getElementById("potential-answers");
-//     potential.innerHTML="";
-
-//     currentQ.options.forEach(function(option, i){
-//     var choiceNode= document.createElement("button");
-//     choiceNode.setAttribute("class", "choice");
-//     choiceNode.setAttribute("value", option);
-
-//     choiceNode.textContent= i + "." + option;
-
-//     choiceNode.onclick = optionClick;
-
-//     potential.appendChild(choiceNode);
-
-//  });
-// }
 
 var currentQuestion = -1
 
