@@ -39,11 +39,14 @@
           <ul class="navbar-nav">
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="score.html"
-                >High Scores</a
-              >
+                >High Scores</a>
             </li>
           </ul>
-        </div>
+          <div class="nav justify-content-end">
+            <li class="nav-item">
+              <a class="nav-link active">Time Remaining: <span id="remainingTime">0</span></a>
+            </li>
+         </div>
       </div>
     </nav>
 
@@ -72,6 +75,7 @@
           Next
          </button>
         </div>
+      </div>
         <section id="finished-section" class="hide">
           <div class="row">
               <div id="high-score" class="col-md-12">
@@ -83,8 +87,8 @@
               </div>
           </div>
       </section>
-      </div>
     </div>
+  
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"

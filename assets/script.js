@@ -20,8 +20,11 @@ var questionsArray= [
     correct: "candy: caramel"},
 ];
 
-var quizOutput= [];
-var currentIndex= 0;
+var currentQuestion = -1
+var score= 0;
+var remainingTime= 0;
+var timer;
+
 
 
  
@@ -42,7 +45,6 @@ document.getElementById("next").addEventListener("click", function(event) {
 });
 
 
-var currentQuestion = -1
 
 function showQuestion() {
 
@@ -67,4 +69,62 @@ function showQuestion() {
         quizContent += buttonCode
     }
     document.getElementById("question-space").innerHTML = quizContent
-    }
+};
+
+
+function countDown() {
+    remainingTime= 60;
+    document.getElementById("remainingTime").innerHTML=remainingTime;
+
+    timer = setInterval(function() {
+        remainingTime --;
+        document.getElementById("remainingTime").innerHTML=remainingTime;
+        if (remainingTime <= 0){
+            clearInterval(timer);
+            gameOver();
+        }
+    }, 1000);
+    showQuestion();
+}
+
+function wrongAnswer(){
+
+}
+
+function correctAnswer(){
+
+}
+
+function gameOver() {
+    clearInterval(timer);
+    var highscoreSectionEl= document.getElementById("finished-section");
+    highscoreSectionEl.setAttribute("class", "show");
+
+    var finalScoreEl= document.getElementById("final-score");
+    finalScoreEl.textContent = time;
+    
+    var scroll = document.querySelector("#quiz-q");
+    scroll.classList.add("hide");
+    
+}
+
+function saveScore(){
+    
+}
+
+function listScore(){
+
+}
+
+function clearScore(){
+
+}
+
+function  newGame(){
+
+}
+
+
+
+
+    
