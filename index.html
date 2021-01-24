@@ -10,8 +10,11 @@
       integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
       crossorigin="anonymous"
     />
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="assets/style.css" />
 
     <title>JavaScript Quiz</title>
@@ -48,20 +51,57 @@
       <div id="first">
         <header class="d-flex justify-content-center">Welcome!</header>
         <p>
-          This is a multi-choice quiz to test basic JavaScript knowledge, a timer
-          begins once the quiz is started but if a question is answered
-          incorrectly time is reduced. Should the time reach zero the game is over
-          and is considered a fail, however if all questions are answered with
-          time to spare that can be logged as the final score.
+          This is a multi-choice quiz to test basic JavaScript knowledge, a
+          timer begins once the quiz is started but if a question is answered
+          incorrectly time is reduced. Should the time reach zero the game is
+          over and is considered a fail, however if all questions are answered
+          with time to spare that can be logged as the final score.
         </p>
         <div class="text-center">
-          <button type="button" class="btn btn-primary btn-lg" id="start">Start Quiz</button>
+          <button type="button" class="btn btn-primary btn-lg" id="start">
+            Start Quiz
+          </button>
         </div>
       </div>
       <div class="hide text-center" id="quiz-q">
-       <h1> Questions</h1>
-       <div id="question-space"></div>
-        <button type="button" class="btn btn-primary btn-lg" id="next">Next</button>
+        <h1>Questions</h1>
+        <div id="question-space"></div>
+        <div
+          class="btn-group"
+          role="group"
+          aria-label="Basic radio toggle button group"
+        >
+          <input
+            type="radio"
+            class="btn-check"
+            name="option1"
+            id="btnradio1"
+            autocomplete="off"
+            checked
+          />
+          <label class="btn btn-outline-primary" for="btnradio1">A</label>
+
+          <input
+            type="radio"
+            class="btn-check"
+            name="option2"
+            id="btnradio2"
+            autocomplete="off"
+          />
+          <label class="btn btn-outline-primary" for="btnradio2">B</label>
+
+          <input
+            type="radio"
+            class="btn-check"
+            name="option3"
+            id="btnradio3"
+            autocomplete="off"
+          />
+          <label class="btn btn-outline-primary" for="btnradio3">C</label>
+        </div>
+        <button type="button" class="btn btn-primary btn-lg" id="next">
+          Next
+        </button>
       </div>
     </div>
 

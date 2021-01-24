@@ -1,4 +1,4 @@
-var questionsArray= ['questionOne', 'questionTwo', 'questionThree', 'questionFour', 'questionFive'];
+var questionsArray= [questionOne, questionTwo, questionThree, questionFour, questionFive];
 
 var questionOne = {
     question: "Which primitive data type is only defined as either true or false?",
@@ -8,25 +8,25 @@ var questionOne = {
 
 var questionTwo = {
     question: "Groups of data displayed within [] are called?",
-    options: "Strings, Arrays, Objects, Variables",
+    options: "Strings, Arrays, Objects",
     correct: "Arrays"
 };
 
 var questionThree = {
     question: "Array indexes begin at '1'.",
-    options: "True, False",
+    options: "True, False, Either",
     correct: "False"
 };
 
 var questionFour = {
     question: "A global variable is declared within---.",
-    options: "A method, A function, the Javascript file before functions, an array",
+    options: "A method, the Javascript file before functions, an array",
     correct: "the Javascript file before functions"
 };
 
 var questionFive = {
     question: "Which one is a property?",
-    options: "var chocolate, candy: caramel, console.log(Yum), (vanilla || chocolate)",
+    options: "candy: caramel, console.log(Yum), (vanilla || chocolate)",
     correct: "candy: caramel"
 };
 
@@ -46,10 +46,18 @@ document.getElementById("next").addEventListener("click", function(event) {
     event.preventDefault
     var chances=[];
     questionsArray.forEach(element => console.log(element));
+    var yes=[];
+    // for(btn-group in questionsArray[i].options){
+    //     answers.push()
 
+
+
+    questionsArray.forEach(myFunction);
+    function myFunction(item, index) {
+        document.getElementById("question-space").innerHTML 
+      }
+       
 });
-
-
 
 
  
