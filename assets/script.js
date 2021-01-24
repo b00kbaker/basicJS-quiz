@@ -31,6 +31,8 @@ var questionFive = {
 };
 
 var quizOutput= [];
+var currentIndex= 0;
+
  
 document.getElementById("start").addEventListener("click", function(event) {
     event.preventDefault
@@ -44,20 +46,31 @@ document.getElementById("start").addEventListener("click", function(event) {
 
 document.getElementById("next").addEventListener("click", function(event) {
     event.preventDefault
-    var chances=[];
-    questionsArray.forEach(element => console.log(element));
-    var yes=[];
-    // for(btn-group in questionsArray[i].options){
-    //     answers.push()
+    showQuestion();
 
-
-
-    questionsArray.forEach(myFunction);
-    function myFunction(item, index) {
-        document.getElementById("question-space").innerHTML 
-      }
-       
 });
+
+
+function showQuestion(){
+    var currentQuestion=questionsArray[currentIndex];
+    var questionEl= document.getElementById("question-space");
+    questionEl.textContent= questionsArray.question;
+    var answers = document.getElementById("potenial-answers");
+    // answers.innerHTML="";
+
+    questionsArray.options.forEach(function(option, i){
+    var optionEL= document.createElement("button");
+    optionEl.setAttribute("class", "answers");
+    optionEl.setAttribute("value", answers);
+
+    optionEl.textContent= i + 1 + "." + choice;
+
+    optionEL.onclick = optionClick;
+
+    answers.appendChild(optionEL);
+    })
+
+};
 
 
  

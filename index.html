@@ -68,6 +68,7 @@
         <div id="question-space"></div>
         <div
           class="btn-group"
+          id="potential-answers"
           role="group"
           aria-label="Basic radio toggle button group"
         >
@@ -99,9 +100,22 @@
           />
           <label class="btn btn-outline-primary" for="btnradio3">C</label>
         </div>
-        <button type="button" class="btn btn-primary btn-lg" id="next">
+        <div class="row">
+         <button type="button" class="btn btn-primary btn-lg" id="next">
           Next
-        </button>
+         </button>
+        </div>
+        <section id="finished-section" class="hide">
+          <div class="row">
+              <div id="high-score" class="col-md-12">
+                  <h2>All done!</h2>
+                  <h3>Your final score is <span id="final-score">0</span></h3>
+                  <label for="initials-area">Enter initials:</label>
+                  <input type="text" name="initials-area" maxlength="4" id="initials">
+                  <button id="submit-button" type="submit">Submit</button>
+              </div>
+          </div>
+      </section>
       </div>
     </div>
 
