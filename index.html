@@ -43,10 +43,13 @@
             </li>
           </ul>
           <div class="nav justify-content-end">
-            <li class="nav-item">
-              <a class="nav-link active">Time Remaining: <span id="remainingTime">0</span></a>
-            </li>
+            <ul>
+             <li class="nav-item">
+               <a class="nav-link active">Time Remaining: <span id="remainingTime">0</span></a>
+             </li>
+            </ul>
          </div>
+       </div>
       </div>
     </nav>
 
@@ -81,7 +84,7 @@
               <div id="high-score" class="col-md-12">
                   <h2>All done!</h2>
                   <h3>Your final score is <span id="final-score"></span></h3>
-                  <label for="initials-area">Enter initials:</label>
+                  <label for="initials-area">Enter initials:</label><span id ="input-initials"></span>
                   <input type="text" name="initials-area" maxlength="4" id="initials">
                   <button id="submit-button" type="submit">Submit</button>
               </div>

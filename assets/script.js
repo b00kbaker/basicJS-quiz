@@ -1,4 +1,4 @@
-var questionsArray= [
+var questionsArray = [
  {question: "Which primitive data type is only defined as either true or false?",
     options: ["Boolean", "String", "Number"],
     correct: "Boolean"},
@@ -16,18 +16,16 @@ var questionsArray= [
     correct: "the Javascript file before functions"},
 
  {question: "Which one is a property?",
-    options:["candy: caramel", "console.log(Yum)", "(vanilla || chocolate)"],
-    correct: "candy: caramel"},
+    options: ["candy: caramel", "console.log(Yum)", "(vanilla || chocolate)"],
+    correct: "candy: caramel"}
 ];
 
 var currentQuestion = -1
 var score= 0;
 var remainingTime= 0;
 var timer;
+var highscores=[];
 
-
-
- 
 document.getElementById("start").addEventListener("click", function(event) {
     event.preventDefault
     var opening = document.getElementById("first");
@@ -46,7 +44,12 @@ document.getElementById("next").addEventListener("click", function(event) {
 });
 
 
-
+function init(){
+    var scoreStorage= JSON.parse(localStorage.getItem("highScores"));
+    if (scoreStorage !== null) {
+        highScores=scoreStorage;
+    }
+}
 function showQuestion() {
     currentQuestion++; 
     if (currentQuestion > questionsArray.length - 1) {
@@ -87,7 +90,7 @@ function countDown() {
 }
 
 function wrongAnswer(){
-remainingTime -= 10;
+remainingTime -= 10;      
 return showQuestion();
 }
 
@@ -109,22 +112,20 @@ function gameOver() {
     
 }
 
-
 function saveScore(){
+
     var initialsEl = document.querySelector("#initials");
-    var user=initialsEl.value.trim();
-    if (user !== "") {
-        var highscores= JSON.parse(window.localStorage.getItem("highscores")) || [];
+    if(!initialsEl.value){
+        return}
+    var user= {
+        user: initialsEl.value.trim(),
+        score: remainingTime
+    };
 
-        var latestScore= {
-            score: remainingTime,
-            initials: user
-        };
-
-        highscores.push(latestScore);
-        window.localStorage.setItem("highscores", JSON.stringify(highscores));
+        highscores.push(user);
+        localStorage.setItem("highscores", JSON.stringify(highscores));
         window.location.href= "score.html";
-    }
+
 }
 
 
@@ -147,7 +148,7 @@ document.getElementById("submit-button").addEventListener("click", function(even
 
 });
 
-
+init();
 
 
 
