@@ -50,7 +50,7 @@ document.getElementById("next").addEventListener("click", function(event) {
 function showQuestion() {
     currentQuestion++; 
     if (currentQuestion > questionsArray.length - 1) {
-        endGame();
+        gameOver();
         return;
     }
     
@@ -110,18 +110,37 @@ function gameOver() {
 }
 
 function saveScore(){
-    
+    localStorage.setItem("highscore", score);
+    localStorage.setItem("highscoreName", document.getElementById("initials"));
+    listScore();
 }
 
 function listScore(){
+    var scoreLog = `
+    <h2>` + localStorage.getItem("highscoreName") + `'s highscore is:</h2>
+    <h1>` + localStorage.getItem("highscore") + `</h1><br> 
 
+    <button onclick="clearScore()">Clear score!</button><button onclick="resetGame()">Play Again!</button>
+    `;
+
+  document.getElementById("log").innerHTML=quizContent;
 }
 
 function clearScore(){
+localStorage.setItem("highscore", "");
+localStorage.setItem("highscoreName", "");
 
+newGame();
 }
 
 function  newGame(){
+    clearInterval(timer);
+    score=0;
+    currentQuestion= -1;
+    remainingTime= 0;
+    timer= null;
+
+    document.getElementById("remainingTime").innerHTML= remainingTime;
 
 }
 
