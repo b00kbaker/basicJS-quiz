@@ -102,7 +102,7 @@ function gameOver() {
     highscoreSectionEl.setAttribute("class", "show");
 
     var finalScoreEl= document.getElementById("final-score");
-    finalScoreEl.textContent = time;
+    finalScoreEl.textContent = remainingTime;
     
     var scroll = document.querySelector("#quiz-q");
     scroll.classList.add("hide");
@@ -111,7 +111,7 @@ function gameOver() {
 
 function saveScore(){
     localStorage.setItem("highscore", score);
-    localStorage.setItem("highscoreName", document.getElementById("initials"));
+    localStorage.setItem("highscoreName", document.getElementByI("initials").value);
     listScore();
 }
 
@@ -124,6 +124,7 @@ function listScore(){
     `;
 
   document.getElementById("log").innerHTML=quizContent;
+
 }
 
 function clearScore(){
