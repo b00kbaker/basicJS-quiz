@@ -118,7 +118,7 @@ function saveScore(){
 
         var latestScore= {
             score: remainingTime,
-            user: initials
+            initials: user
         };
 
         highscores.push(latestScore);
@@ -126,30 +126,7 @@ function saveScore(){
         window.location.href= "score.html";
     }
 }
-// function saveScore(){
-//     localStorage.setItem("highscore", score);
-//     localStorage.setItem("highscoreName", document.getElementByI("initials").value);
-//     listScore();
-// }
 
-// function listScore(){
-//     var scoreLog = `
-//     <h2>` + localStorage.getItem("highscoreName") + `'s highscore is:</h2>
-//     <h1>` + localStorage.getItem("highscore") + `</h1><br> 
-
-//     <button onclick="clearScore()">Clear score!</button><button onclick="resetGame()">Play Again!</button>
-//     `;
-
-//   document.getElementById("log").innerHTML=quizContent;
-
-// }
-
-// function clearScore(){
-// localStorage.setItem("highscore", "");
-// localStorage.setItem("highscoreName", "");
-
-// newGame();
-// }
 
 function  newGame(){
     clearInterval(timer);
@@ -162,11 +139,15 @@ function  newGame(){
 
 }
 
+
+
 document.getElementById("submit-button").addEventListener("click", function(event) {
     event.preventDefault
     saveScore();
 
 });
+
+
 
 
 
